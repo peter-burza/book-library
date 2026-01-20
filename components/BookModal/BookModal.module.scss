@@ -1,0 +1,40 @@
+@use "@/styles/variables" as *;
+
+.modalContainer {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalUnderlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modalContent {
+  position: relative;
+  background-color: $shared-box-bg;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+  max-width: 90%;
+  max-height: 80%;
+  overflow-y: auto;
+  overflow: auto;
+
+  /* Firefox */
+  scrollbar-width: none;
+
+  /* Internet Explorer & Edge (legacy) */
+  -ms-overflow-style: none;
+}
+
+.modalContent::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Edge */
+}
